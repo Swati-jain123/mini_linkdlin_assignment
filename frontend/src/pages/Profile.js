@@ -9,7 +9,8 @@ export default function Profile() {
   useEffect(() => {
     if (user?.id) {
       axios
-        .get(`http://localhost:5000/api/user/${user.id}/posts`)
+        .get(`${process.env.REACT_APP_BACKEND_URL}/api/user/${user.id}/posts`)
+
         .then(res => setPosts(res.data));
     }
   }, [user?.id]);
