@@ -11,7 +11,7 @@ export default function Feed() {
   }, []);
 
   const fetchPosts = async () => {
-    const res = await axios.get("http://localhost:5000/api/posts");
+    const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/posts`);
     setPosts(res.data);
   };
 
@@ -22,7 +22,7 @@ export default function Feed() {
     }
   
     try {
-      await axios.post("http://localhost:5000/api/posts", {
+      await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/posts`, {
         userId: user.id,
         content: newPost,
       });
