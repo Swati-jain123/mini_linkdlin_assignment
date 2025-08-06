@@ -5,7 +5,14 @@ const authRoutes = require('./routes/auth');
 const postRoutes = require('./routes/post');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:3000",          // local frontend
+    "https://mini-linkdlin-assignment-1.onrender.com/" // deployed frontend
+  ],
+  credentials: true
+}));
+
 app.use(express.json());
 
 app.use('/api', authRoutes);
