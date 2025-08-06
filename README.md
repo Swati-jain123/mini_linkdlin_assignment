@@ -36,7 +36,7 @@ cd mini_linkdlin_assignment
 ```bash
 cd backend
 npm install
-node index.js
+npm start
 ```
 
 ### 3. Setup Frontend
